@@ -1,0 +1,556 @@
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Switzer-Medium', sans-serif;
+    background-color: #fbfffa;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar Styling */
+.navbar {
+    color: #fff;
+    padding: 1rem;
+    padding-top: 0;
+    top: 0;
+    z-index: 1000;
+    /* Light background for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Styling */
+.logo img {
+    height: 120px;
+    width: auto;
+    z-index: 5;
+}
+
+/* Navigation Links Container */
+.nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    /* Centers the nav links */
+    align-items: center;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 15px;
+    border: 2px #333 solid;
+    border-radius: 60px;
+}
+
+.nav-links li {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3ea110;
+    /* Accent color */
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(145deg, #e4f0d0, #f5fbf3);
+    overflow: hidden;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.hero-navbar {
+    position: fixed;
+    /* Keeps the navbar visible while scrolling */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-navbar.scrolled {
+    background-color: #ffffff;
+    /* Solid background on scroll */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-logo img {
+    height: 80px;
+    /* Slightly smaller for better spacing */
+    padding: 0.5rem;
+    transition: height 0.3s ease;
+    /* Smooth transition on resize */
+}
+.hero-links {
+    display: flex;
+    gap: 30px;
+    /* Increased spacing between links */
+    list-style: none;
+    align-items: center;
+}
+.hero-links li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    /* Neutral color for better readability */
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-links li a:hover {
+    color: #ffffff;
+    background-color: #789873;
+    /* Adds a background highlight on hover */
+}
+
+.btn-client {
+    background-color: #3ea110;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-client:hover {
+    background-color: #2a3029;
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+/* Hero Content */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    line-height: 1.2;
+    color: #333;
+}
+
+.hero-text h1 span:nth-child(2) {
+    font-weight: bold;
+    color: #3b772e;
+}
+
+.scroll-indicator {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #789873;
+    animation: bounce 2s infinite;
+}
+
+#thin{
+    font-family: 'Switzer-Semibold';
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-navbar {
+        padding: 0 20px;
+    }
+
+    .hero-links {
+        gap: 15px;
+        /* Reduced gap for smaller screens */
+    }
+
+    .btn-client {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.rating {
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.rating i {
+    color: #f4c22b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-navbar {
+        padding: 0 20px;
+    }
+}
+
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    background-color: #fbfffa;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.service-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    align-items: flex-end;
+    color: #f5fff4;
+}
+
+.service-card .content {
+    padding: 20px;
+    width: 100%;
+}
+
+
+
+.service-card h2 {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    backdrop-filter: blur(2px);
+}
+
+.service-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    backdrop-filter: blur(2px);
+}
+
+.service-card .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.service-card .tools span {
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.sec-theme{
+    width: 80%;
+    color: #555;
+}
+.sec-theme h1{
+    font-size: 20px;
+    font-family: 'Switzer-Extralight';
+}
+
+.sec-theme p {
+    font-size: 30px;
+}
+
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    color: #555;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #51802b;
+    /* Change color on hover */
+}
+
+
+/* Facts Section */
+.facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.fact {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.fact h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #333;
+}
+
+.fact p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0 0;
+}
+
+/* Decorative Elements (Optional) */
+.fact::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('path-to-icon.png') no-repeat center/contain;
+    top: 10px;
+    right: 10px;
+    opacity: 0.2;
+}
+
+
+/* Offerings Section */
+.offerings {
+    padding: 60px 20px;
+    background-color: #f7fbf5;
+}
+
+.offerings-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.offering-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.offering-card img {
+    width: 100%;
+    height: 200px;
+    /* Set a consistent height */
+    object-fit: cover;
+    /* Ensures the image scales nicely without distortion */
+    border-bottom: 2px solid #eee;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    /* Optional: Adds rounded corners for a more polished look */
+    filter: brightness(0.95);
+    /* Slightly darkens the image for a balanced look */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.offering-card img:hover {
+    transform: scale(1.05);
+    /* Adds a subtle zoom-in effect on hover */
+    filter: brightness(1);
+    /* Restores the brightness on hover */
+}
+
+.offering-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.offering-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.offering-card .cost {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #3b772e;
+    margin-top: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card {
+    background: #f9fdf6;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+    font-size: 1rem;
+    color: #3b772e;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Awards & Certifications Section */
+.awards {
+    padding: 60px 20px;
+    background-color: #f2f9ef;
+}
+
+.awards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.award-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.award-card img {
+    width: 80px;
+    height: auto;
+    margin: 0 auto 15px auto;
+}
+
+.award-card h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.award-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
